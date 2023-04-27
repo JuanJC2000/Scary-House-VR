@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     public float countDownRate = 10f;
 
     public int zombieLimit = 3;
-    public int zombieCount = 0;
+    private int zombieCount = 0;
 
     public GameObject zombie;
     
