@@ -27,13 +27,14 @@ public class zombie : MonoBehaviour
         zombieAI.speed = speed;
 
         player = GameObject.FindGameObjectWithTag("Player");
-        print(player.name);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         zombieAI.destination = player.transform.position;
+        Debug.DrawLine(transform.position, zombieAI.destination, Color.red);
     }
 
     [ContextMenu ("Damage")]

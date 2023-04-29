@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - RedBalls
+  - zombie
+  - Bullet
   layers:
   - Default
   - TransparentFX
