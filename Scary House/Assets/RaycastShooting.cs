@@ -50,7 +50,7 @@ public class RaycastShooting : MonoBehaviour
         Rigidbody rb = varName.GetComponent<Rigidbody>();
        // varName2.WakeUp();
         rb.AddForce(rb.transform.forward * shotPower);
-        Debug.Log("I have shot" + rb.transform.forward * shotPower );
+        Debug.Log("I have shot");
         
 
 
