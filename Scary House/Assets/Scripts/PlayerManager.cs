@@ -36,7 +36,7 @@ public class PlayerManager : MonoBehaviour
         {
           
             TakeDamage(collision.gameObject.GetComponent<zombie>().damage);
-            Destroy(collision.gameObject);
+            
         }
     }
 }

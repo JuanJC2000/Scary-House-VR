@@ -17,16 +17,19 @@ public class SpawnManager : MonoBehaviour
 
     public int currentRound;
 
-    public GameObject[] zombieArray;
+    public GameObject[] zombieTypes;
   
     public bool roundFinished;
     public bool roundStart;
 
-    public static UnityAction onZombieDie;
+    //static to be used by all clases, Unity Action delegate acting as observer?.
+  
 
+
+    //Reference the function 
     private void Awake()
     {
-        onZombieDie = CheckStatus;
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -47,7 +50,7 @@ public class SpawnManager : MonoBehaviour
 
         while (zombieCount < zombieLimit)
         {
-            Instantiate(zombieArray[Random.Range (0,3)], transform);
+            Instantiate(zombieTypes[Random.Range (0,3)], transform);
             zombieCount++;
 
             yield return new WaitForSeconds(countDownRate);
@@ -70,14 +73,14 @@ public class SpawnManager : MonoBehaviour
        
     }
 
-    public void CheckStatus()
-    {
-        zombieCount--;
-        if (zombieCount <= 0)
-        {
-            Debug.Log("Win");
-            roundFinished = true;
-            currentRound++;
-        }
-    }
+    //CheckStatus as as function and observer to check for condition// event 
+  
+
+  
+
+   // public void Kill()
+  //  {
+   //     Destroy(gameObject);
+  //      SpawnManager.onZombieDie.Invoke();
+  //  }
 }
